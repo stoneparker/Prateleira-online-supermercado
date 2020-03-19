@@ -4,8 +4,8 @@ import {Image} from 'react-native';
 export default function LogoCart(){
    return (
       <Image
-         style={{width: 50, height: 50}}
-         source={require('../../assets/cart.png')}
+         style={{width: 40, height: 40, marginRight: 5}}
+         source={require('../../assets/supermarket.png')}
       />
    )
 }
