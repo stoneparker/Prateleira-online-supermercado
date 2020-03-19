@@ -7,6 +7,7 @@ import { TouchableOpacity, Text} from 'react-native'
 import HomeScreen from './pages/Home'
 import ProfileScreen from './pages/Profile'
 import LogoCart from './design/Cart'
+import LogoHamburguer from './design/Hamburguer'
 
 const Stack = createStackNavigator();
 
@@ -27,10 +28,12 @@ function Shopping(){
                headerTitleAlign: 'center', 
             }}>
 
-            <Stack.Screen name='Home' component={HomeScreen} options={
+            <Stack.Screen name='Home' component={HomeScreen} options={({navigation}) => (
                {
-                 headerRight: () => <TouchableOpacity><LogoCart /></TouchableOpacity>
-               }}/>
+                 headerRight: () => <TouchableOpacity><LogoCart /></TouchableOpacity>,
+                 headerLeft: () => <TouchableOpacity onPress={() => navigation.openDrawer()} ><LogoHamburguer /></TouchableOpacity>
+
+               })}/>
          </Stack.Navigator>
    );
 }
